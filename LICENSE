@@ -1,0 +1,13 @@
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   ... (standard Apache 2.0 text omitted for brevity in draft; full text to be included in final repo) ...
+
+This project is derived from google-developer-training/android-basics-kotlin-tip-calculator-app-solution
+at commit 0f54d0edf7dbe66a2c45a0608f0a7a2b693026b3, licensed under Apache License 2.0.
+Copyright 2020 The Android Open Source Project.
+
+Modifications Copyright 2026 Aaron Lin.
