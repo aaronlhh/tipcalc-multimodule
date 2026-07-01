@@ -23,11 +23,6 @@ android {
     }
 }
 
-repositories {
-    google()
-    mavenCentral()
-}
-
 dependencies {
     implementation(project(":core"))
     implementation(libs.androidx.appcompat)

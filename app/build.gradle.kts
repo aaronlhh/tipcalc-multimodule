@@ -36,11 +36,6 @@ android {
     }
 }
 
-repositories {
-    google()
-    mavenCentral()
-}
-
 dependencies {
     implementation(project(":core"))
     implementation(project(":ui"))
