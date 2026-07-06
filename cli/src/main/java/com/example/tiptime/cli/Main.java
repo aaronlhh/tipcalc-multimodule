@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         if (args.length < 2) {
             System.err.println("Usage: <cost> <tipFraction> [roundUp]");
             return;
@@ -16,16 +16,12 @@ public class Main {
         double tipFraction = Double.parseDouble(args[1]);
         boolean roundUp = args.length > 2 && Boolean.parseBoolean(args[2]);
 
-        String label = "Tip:";
-        try (InputStream in = Main.class.getResourceAsStream("/app.properties")) {
-            if (in != null) {
-                Properties props = new Properties();
-                props.load(in);
-                label = props.getProperty("label", label);
-            }
-        } catch (Exception e) {
-            // ignore, use default label
-        }
+        InputStream in = Main.class.getResourceAsStream("/app.properties");
+        if (in == null) throw new IllegalStateException("Missing required resource: /app.properties");
+        Properties props = new Properties();
+        props.load(in);
+        String label = props.getProperty("label");
+        if (label == null) throw new IllegalStateException("Missing 'label' in app.properties");
 
         TipResult result = TipService.compute(cost, tipFraction, roundUp);
         System.out.println(label + " " + result.getFormatted());
