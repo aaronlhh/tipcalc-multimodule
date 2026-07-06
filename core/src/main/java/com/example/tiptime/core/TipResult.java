@@ -1,5 +1,7 @@
 package com.example.tiptime.core;
 
+import com.example.money.MoneyFormatter;
+
 public final class TipResult {
     private final double amount;
     private final String formatted;
@@ -14,6 +16,6 @@ public final class TipResult {
     }
 
     public String getFormatted() {
-        return formatted;
+        return MoneyFormatter.format(amount);
     }
 }

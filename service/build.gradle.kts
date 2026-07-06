@@ -1,20 +1,15 @@
 plugins {
-    alias(libs.plugins.kotlin.jvm)
     id("java-library")
 }
 
 group = "com.example.tiptime"
 version = "1.0"
 
-dependencies {
-    api(project(":ext"))
-}
-
-kotlin {
-    jvmToolchain(17)
-}
-
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+}
+
+dependencies {
+    api(project(":core"))
 }

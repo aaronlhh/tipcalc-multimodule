@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "tipcalc-multimodule"
-include(":core", ":ui", ":app")
+include(":core", ":ui", ":app", ":service", ":cli", ":ext")
